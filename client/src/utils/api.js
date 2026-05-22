@@ -7,6 +7,7 @@ const api = axios.create({
     'Content-Type': 'application/json'
   }
 })
+
 api.interceptors.response.use(
   (response) => response,
   (error) => {
