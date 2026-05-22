@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://sandbox-3841.onrender.com/api',
   timeout: 15000,
   headers: {
     'Content-Type': 'application/json'
