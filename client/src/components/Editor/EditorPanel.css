@@ -1,0 +1,196 @@
+.editor-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--editor-bg);
+  overflow: hidden;
+}
+
+/* Tab Bar */
+.tab-bar {
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-default);
+  overflow-x: auto;
+  flex-shrink: 0;
+  height: 36px;
+}
+
+.tab-bar::-webkit-scrollbar { height: 2px; }
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: 100%;
+  cursor: pointer;
+  border-right: 1px solid var(--border-muted);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: all 0.1s;
+  flex-shrink: 0;
+  min-width: 80px;
+  max-width: 160px;
+  position: relative;
+}
+
+.tab:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.tab.active {
+  background: var(--editor-bg);
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent-blue);
+}
+
+.tab-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.1s;
+  flex-shrink: 0;
+}
+
+.tab:hover .tab-close,
+.tab.active .tab-close {
+  opacity: 1;
+}
+
+.tab-close:hover {
+  background: var(--bg-overlay);
+  color: var(--text-primary);
+}
+
+/* Info Bar */
+.editor-info-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3px 12px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-muted);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.editor-filename {
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.editor-language {
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.editor-unsaved {
+  color: var(--accent-orange);
+  margin-left: auto;
+}
+
+/* Editor Wrapper */
+.editor-wrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Empty State */
+.editor-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--editor-bg);
+}
+
+.editor-empty-content {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.editor-empty-icon {
+  font-size: 3rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--border-default);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.editor-empty-content h3 {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.editor-empty-content p {
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Shortcuts hint */
+.shortcuts-hint {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.shortcut-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+kbd {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-secondary);
+}
+
+.shortcut-desc {
+  margin-left: 8px;
+  color: var(--text-secondary);
+}
+
+/* Loading */
+.editor-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 100%;
+  color: var(--text-muted);
+  font-size: 13px;
+}

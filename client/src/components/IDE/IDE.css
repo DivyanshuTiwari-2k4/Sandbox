@@ -1,0 +1,38 @@
+.ide-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 44px);
+}
+
+.ide-main {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.resize-handle-v {
+  width: 3px;
+  background: var(--border-muted);
+  cursor: col-resize;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.resize-handle-v:hover,
+.resize-handle-v[data-resize-handle-active] {
+  background: var(--accent-blue);
+}
+
+.resize-handle-h {
+  height: 3px;
+  background: var(--border-muted);
+  cursor: row-resize;
+  transition: background 0.15s;
+}
+
+.resize-handle-h:hover,
+.resize-handle-h[data-resize-handle-active] {
+  background: var(--accent-blue);
+}
